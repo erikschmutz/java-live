@@ -9,7 +9,7 @@ fs.watch(buttonPressesLogFile, { interval: 100 }, update);
 
 function update(err, data) {
   exec(
-    "javac ./src/Index.java  -d ./dist/out && java -classpath ./dist/out/ Index < ./src/input.txt",
+    "javac ./src/Index.java  -d ./dist/out && java -classpath ./dist/out/ -ea Index < ./src/input.txt",
     (err, stdout, stderr) => {
       if (err || stderr) {
         createPage("<div style='color:red'>" + err + "</div>");
