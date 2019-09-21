@@ -11,7 +11,7 @@ function update(err, data) {
   exec(
     "javac ./src/*.java  -d ./dist/out && java -classpath ./dist/out/ -ea Index < ./src/input.txt",
     (err, stdout, stderr) => {
-      if (err || stderr) {
+      if (err) {
         createPage("<div style='color:red'>" + err + "</div>");
         return;
       }
